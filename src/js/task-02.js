@@ -19,6 +19,6 @@ const ingrList = document.querySelector("#ingredients");
 for (const ingredient of ingredients) {
   const ingrItem = document.createElement("li");
   ingrItem.textContent = ingredient;
-  ingrList.classList.add("item");
+  ingrItem.classList.add("item");
   ingrList.appendChild(ingrItem);
 }
