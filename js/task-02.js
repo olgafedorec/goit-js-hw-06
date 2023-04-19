@@ -22,3 +22,4 @@ for (const ingredient of ingredients) {
   ingrItem.classList.add("item");
   ingrList.appendChild(ingrItem);
 }
+document.body.append(ingrList);
