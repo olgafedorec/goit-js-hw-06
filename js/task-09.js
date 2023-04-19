@@ -29,5 +29,6 @@ widgetBTN.addEventListener("click", onClickChange);
 
 function onClickChange() {
   bodyStyle.style.background = getRandomHexColor();
-  console.log((widgetColor.textContent = getRandomHexColor()));
+  widgetColor.textContent = getRandomHexColor();
+  console.log(widgetColor.textContent);
 }
