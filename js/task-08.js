@@ -29,9 +29,16 @@ mainForm.addEventListener("submit", onSubmit);
 
 function onSubmit(evt) {
   evt.preventDefault();
+
+  const formElements = {
+    email: formInputMail.value,
+    password: formInputPass.value,
+  };
+
+  console.log(formElements);
+
   if (formInputMail.value === "" || formInputPass.value === "") {
     return alert("Усі поля повинні бути заповнені!");
-    console.log(elements);
   }
   mainForm.reset();
 }
