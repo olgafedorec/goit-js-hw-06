@@ -23,15 +23,17 @@ const images = [
   },
 ];
 
-const galleryItem = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
 
-const makeItemContent = ({ url, alt }) => {
-  const galleryListItem = `<li class="item"> <img class=""img src=${url} alt=${alt} with="350" height="300"/> </li>`;
-  galleryItem.insertAdjacentHTML("beforeend", galleryListItem);
-};
+const galleryContent = images
+  .map(
+    (image) =>
+      `<li><img class=""img src=${image.url} alt=${image.alt} with="350" height="300"/></li>`
+  )
+  .join("");
 
-const galleryList = images.map(makeItemContent);
+gallery.insertAdjacentHTML("beforeend", galleryContent);
 
-galleryItem.style.listStyle = "none";
-galleryItem.style.display = "flex";
-galleryItem.style.gap = "10px";
+gallery.style.listStyle = "none";
+gallery.style.display = "flex";
+gallery.style.gap = "10px";
