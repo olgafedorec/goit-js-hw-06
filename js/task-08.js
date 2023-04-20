@@ -35,10 +35,11 @@ function onSubmit(evt) {
     password: formInputPass.value,
   };
 
-  console.log(formElements);
-
   if (formInputMail.value === "" || formInputPass.value === "") {
     return alert("Усі поля повинні бути заповнені!");
   }
+
+  console.log(formElements);
+
   mainForm.reset();
 }

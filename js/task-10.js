@@ -20,14 +20,43 @@
 // }
 
 // Створи функцію destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі створені елементи.
+const refs = {
+  inputEl: document.querySelector("#controls input"),
 
-const inputEl = document.querySelector("number");
+  createBtn: document.querySelector("button[data-create]"),
 
-const createBtn = document.querySelector("button");
+  destroyBtn: document.querySelector("button[data-destroy]"),
+};
 
-const destroyBtn = document.querySelector("button");
+const boxes = document.querySelector("#boxes");
 
-const boxes = document.getElementById("#boxes");
+refs.createBtn.addEventListener("click", createBoxes());
+
+refs.destroyBtn.addEventListener("click", destroyBoxes());
+
+function createBoxes(amount) {
+  for (let i = 0; i < amount; i++) {
+    const box = document.createElement("div");
+
+    box.style.width = 30 + "px";
+    box.style.height = 30 + "px";
+    box.style.backgroundColor = getRandomHexColor();
+
+    boxes.appendChild(box);
+  }
+  document.body.append(boxes);
+}
+
+function getAmount() {
+  const amount = refs.inputEl.value;
+  if (amount > 0) {
+    createBoxes(amount);
+  }
+}
+
+function destroyBoxes() {
+  boxes.innerHTML = "";
+}
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
