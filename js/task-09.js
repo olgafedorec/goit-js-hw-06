@@ -23,12 +23,18 @@ const widgetBTN = document.querySelector(".change-color");
 
 const widgetColor = document.querySelector(".color");
 
-const bodyStyle = document.querySelector("body");
+// const bodyStyle = document.querySelector("body");
 
 widgetBTN.addEventListener("click", onClickChange);
 
 function onClickChange() {
-  bodyStyle.style.background = getRandomHexColor();
+  document.body.style.backgroundColor = getRandomHexColor();
   widgetColor.textContent = getRandomHexColor();
-  console.log(widgetColor.textContent);
+  console.log(widgetColor);
 }
+
+// function onClickChange() {
+//   bodyStyle.style.background = getRandomHexColor();
+//   widgetColor.textContent = getRandomHexColor();
+//   console.log(widgetColor);
+// }
